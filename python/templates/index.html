@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta 
+        name="wca-hub" 
+        content="Website"
+        charset="utf-8"/>
+        <title>WCA HUB</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/wca_stylesheet.css') }}">
+        <div class="nav">
+        <nav>
+            <ul>
+                <li><a href = "index.html">Home</a></li>
+                <li><a href = "about.html">About</a></li>
+                <li><a href = "contact.html">Contact Us</a></li>
+                <li><a href = "login.html">Login</a></li>
+                
+            </ul>
+            </div>
+        </nav> 
+        <style>
+            h2 {
+              color: rgb(161, 155, 41);
+              font-family: verdana;
+            
+            }
+            p {
+              color: red;
+              font-family: courier;
+              font-size: 80%;
+            }
+            </style>
+            <script>
+                var todays_date= new Date();
+            document.write(todays_date);
+            </script>
+</head>
+    <body>
+        
+        <section>
+            <h2 style="text-align:center;">Welcome to WCA Hub <input id="searchbar" onkeyup="search_projects()" type="text"
+                name="search" placeholder="Search projects.."></h2>
+                <img src="{{ url_for('static', filename='images/book01.jpeg') }}" alt="Pile of Books" style="width:1200px;height:100px;">
+                        <h5>Recent Research and Projects</h5>
+                        <table name ="Recent-Upload">
+                            <tr>
+                                <th>S/N</th>
+                                <th>Date</th>
+                                <th>Author's Name</th>
+                                <th>Project Title</th>
+                                <th>Remark</th>
+                            </tr>
+                            <tr>   
+                                <td>01</td>
+                                <td>01012023</td>
+                                <td>wca</td>
+                                <td>wc-hub</td>
+                                <td>Project Prototype</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <br>
+                        <br>
+                        <h4>Kindly upload and download projects or research file(s) here!</h4>
+                        <frame>
+                            <fieldset>
+                                <legend>Kindly Upload your Research Files or Folder</legend>
+                                <label for="browse">Click to upload a file/folder</label>
+                                <input type="file" onchange="showFile(this)">
+                                <script>
+                                    function showFile(input) {
+                                    let file = input.files[0];
+
+                                    alert(`File name: ${file.name}`); 
+                                    }
+                                </script>
+                                <br><br>
+                            <label for="upload" >Click the next button to Upload your file(s) </label>
+                            <button onclick="showAlert()"id =Upload>Upload</button>
+                            <script>
+                                function showAlert(){
+                                alert("File(s) Uploaded Successfully!");
+                                }
+                            </script>    
+                        </fieldset>
+                            
+                        </frame>
+                        <h3 style="text-align: center";> Thank you for your contribution!</h3>
+                        
+        </section>
+        
+        <footer>WCA HUB | Copyright &copy; 2023</footer>
+    </body>
+</html>
